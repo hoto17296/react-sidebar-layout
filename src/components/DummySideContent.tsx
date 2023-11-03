@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import style from './DummySidebarContent.module.css'
+import style from './DummySideContent.module.css'
 
 const DummySidebarContent: FC = () => {
   return (

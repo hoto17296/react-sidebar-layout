@@ -17,35 +17,32 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
-  const [showSidebar, setShowSidebar] = useState<boolean>(
+  const [showSide, setShowSide] = useState<boolean>(
     document.body.clientWidth > 768
   )
   const [inTransition, setInTransition] = useState<boolean>(false)
 
   const slot = parseSlot(children)
 
-  const sidebarClassNames = [
-    style.sidebar,
-    showSidebar ? style.show : style.hide,
-  ]
-  if (inTransition) sidebarClassNames.push(style.inTransition)
+  const sideClassNames = [style.side, showSide ? style.show : style.hide]
+  if (inTransition) sideClassNames.push(style.inTransition)
 
-  function toggleSidebar() {
+  function toggleSide() {
     setInTransition(true)
-    setShowSidebar((state) => !state)
+    setShowSide((state) => !state)
   }
   return (
     <div className={style.container}>
       <div
-        className={sidebarClassNames.join(' ')}
+        className={sideClassNames.join(' ')}
         onTransitionEnd={() => setInTransition(false)}
       >
-        <button className={style.toggleButton} onClick={toggleSidebar} />
-        <div>{slot.sidebar}</div>
+        <button className={style.toggleButton} onClick={toggleSide} />
+        <div>{slot.side}</div>
       </div>
-      <div className={style.content}>
-        <div>{slot.content}</div>
-        <div className={style.overlay} onClick={toggleSidebar} />
+      <div className={style.main}>
+        <div>{slot.main}</div>
+        <div className={style.overlay} onClick={toggleSide} />
       </div>
     </div>
   )

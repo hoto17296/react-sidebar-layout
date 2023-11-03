@@ -1,16 +1,16 @@
 import Layout from './components/Layout'
-import DummySidebarContent from './components/DummySidebarContent'
-
-const generateDummyString = (times: number): string =>
-  [...Array(times)].map(() => 'DUMMY').join(' ')
+import DummySideContent from './components/DummySideContent'
+import DummyMainContent from './components/DummyMainContent'
 
 function App() {
   return (
     <Layout>
-      <template slot="sidebar">
-        <DummySidebarContent />
+      <template slot="side">
+        <DummySideContent />
       </template>
-      <template slot="content">{generateDummyString(100)}</template>
+      <template slot="main">
+        <DummyMainContent />
+      </template>
     </Layout>
   )
 }

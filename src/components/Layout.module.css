@@ -1,70 +1,73 @@
 .container {
-  --sidebar-width: 300px;
+  --side-width: 300px;
   --transition-time: 0.3s;
-  --sidebar-color-bg: #eee;
+  --side-color-bg: #eee;
   background-color: #fff;
   display: flex;
   height: 100dvh;
   min-width: 360px;
 }
 
-.sidebar {
-  background-color: var(--sidebar-color-bg);
+.side {
+  background-color: var(--side-color-bg);
   flex-shrink: 0;
   position: relative;
   z-index: 1;
   transition: width var(--transition-time);
 }
 
-.sidebar.show {
-  width: var(--sidebar-width);
+.side.show {
+  width: var(--side-width);
 }
 
-.sidebar.hide {
+.side.hide {
   width: 0;
 }
 
-.sidebar .toggleButton {
+.side .toggleButton {
   position: absolute;
   width: 2em;
   height: 3em;
   top: 5em;
   right: -2em;
-  background-color: var(--sidebar-color-bg);
+  background-color: var(--side-color-bg);
   border: none;
   border-radius: 0 0.5em 0.5em 0;
   font-weight: bold;
   color: #999;
 }
 
-.sidebar.show .toggleButton::after {
+.side.show .toggleButton::after {
   content: '<<';
 }
 
-.sidebar.hide .toggleButton::after {
+.side.hide .toggleButton::after {
   content: '>>';
 }
 
-.sidebar > div {
-  width: var(--sidebar-width);
+.side > div {
+  width: var(--side-width);
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.content {
+.main {
   width: 100%;
   position: relative;
   z-index: 0;
 }
 
-.content > .overlay {
+.main > div {
+  height: 100%;
+}
+
+.main > .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 0;
-  height: 100%;
   background-color: #000;
   opacity: 0;
   transition: opacity var(--transition-time);
@@ -75,17 +78,17 @@
     overflow-x: hidden;
   }
 
-  .content {
+  .main {
     width: 100vw;
     flex-shrink: 0;
   }
 
-  .sidebar.show + .content > .overlay {
+  .side.show + .main > .overlay {
     opacity: 0.5;
   }
 
-  .sidebar.show + .content > .overlay,
-  .sidebar.inTransition + .content > .overlay {
+  .side.show + .main > .overlay,
+  .side.inTransition + .main > .overlay {
     width: 100%;
   }
 }
