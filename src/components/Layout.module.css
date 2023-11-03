@@ -4,7 +4,7 @@
   --sidebar-color-bg: #eee;
   background-color: #fff;
   display: flex;
-  height: 100vh;
+  height: 100dvh;
   min-width: 360px;
 }
 
