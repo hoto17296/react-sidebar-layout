@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  flex-shrink: 0;
+  border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+  font-weight: bold;
+  font-size: 1.3em;
+  padding: 0 0.7em;
+  line-height: 60px;
+}
+
+footer {
+  flex-shrink: 0;
+  border-top: rgba(0, 0, 0, 0.1) 1px solid;
+  padding: 0.7em;
+  display: flex;
+  align-items: center;
+}
+
+footer > .userIcon {
+  width: 3em;
+  height: 3em;
+  margin-right: 0.7em;
+  border: rgba(0, 0, 0, 0.1) 1px solid;
+  border-radius: 50%;
+}
+
+ul {
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 0.3em;
+  overflow-y: scroll;
+}
+
+ul > li > a {
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding: 0.7em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+}
+
+ul > li > a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
