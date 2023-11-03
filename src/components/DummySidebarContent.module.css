@@ -4,7 +4,7 @@
   height: 100%;
 }
 
-header {
+.container > header {
   flex-shrink: 0;
   border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
   font-weight: bold;
@@ -13,7 +13,7 @@ header {
   line-height: 60px;
 }
 
-footer {
+.container > footer {
   flex-shrink: 0;
   border-top: rgba(0, 0, 0, 0.1) 1px solid;
   padding: 0.7em;
@@ -21,7 +21,7 @@ footer {
   align-items: center;
 }
 
-footer > .userIcon {
+.container > footer > .userIcon {
   width: 3em;
   height: 3em;
   margin-right: 0.7em;
@@ -29,7 +29,7 @@ footer > .userIcon {
   border-radius: 50%;
 }
 
-ul {
+.container > ul {
   height: 100%;
   list-style-type: none;
   margin: 0;
@@ -37,7 +37,7 @@ ul {
   overflow-y: scroll;
 }
 
-ul > li > a {
+.container > ul > li > a {
   color: #000;
   text-decoration: none;
   display: block;
@@ -46,6 +46,6 @@ ul > li > a {
   border-radius: 0.5em;
 }
 
-ul > li > a:hover {
+.container > ul > li > a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
