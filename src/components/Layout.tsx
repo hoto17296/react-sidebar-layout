@@ -30,24 +30,22 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   ]
   if (inTransition) sidebarClassNames.push(style.inTransition)
 
+  function toggleSidebar() {
+    setInTransition(true)
+    setShowSidebar((state) => !state)
+  }
   return (
     <div className={style.container}>
       <div
         className={sidebarClassNames.join(' ')}
         onTransitionEnd={() => setInTransition(false)}
       >
-        <button
-          className={style.toggleButton}
-          onClick={() => {
-            setInTransition(true)
-            setShowSidebar(!showSidebar)
-          }}
-        />
+        <button className={style.toggleButton} onClick={toggleSidebar} />
         <div>{slot.sidebar}</div>
       </div>
       <div className={style.content}>
         <div>{slot.content}</div>
-        <div className={style.overlay} />
+        <div className={style.overlay} onClick={toggleSidebar} />
       </div>
     </div>
   )
