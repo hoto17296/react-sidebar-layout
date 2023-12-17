@@ -6,7 +6,7 @@ interface SidebarContentProps {}
 const SidebarContent: FC<SidebarContentProps> = () => {
   return (
     <div className={style.container}>
-      <header>React Sidebar Layout</header>
+      <header>{import.meta.env.VITE_APP_NAME}</header>
       <ul>
         {[...Array(20)].map(() => (
           <li>
