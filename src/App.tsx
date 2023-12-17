@@ -1,15 +1,16 @@
+import { RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
-import DummySideContent from './components/DummySideContent'
-import DummyMainContent from './components/DummyMainContent'
+import SideContent from './components/SideContent'
+import { router } from './route'
 
 function App() {
   return (
     <Layout>
       <template slot="side">
-        <DummySideContent />
+        <SideContent />
       </template>
       <template slot="main">
-        <DummyMainContent />
+        <RouterProvider router={router} />
       </template>
     </Layout>
   )

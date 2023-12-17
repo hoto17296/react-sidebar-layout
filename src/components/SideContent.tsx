@@ -1,7 +1,9 @@
 import type { FC } from 'react'
-import style from './DummySideContent.module.css'
+import style from './SideContent.module.css'
 
-const DummySidebarContent: FC = () => {
+interface SidebarContentProps {}
+
+const SidebarContent: FC<SidebarContentProps> = () => {
   return (
     <div className={style.container}>
       <header>React Sidebar Layout</header>
@@ -20,4 +22,4 @@ const DummySidebarContent: FC = () => {
   )
 }
 
-export default DummySidebarContent
+export default SidebarContent
